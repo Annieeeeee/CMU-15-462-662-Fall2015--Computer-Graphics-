@@ -1,0 +1,7 @@
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/install/local.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/rebuild_cache.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/drawsvg.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/edit_cache.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/install/strip.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/install.dir
+/Users/anthony/Documents/CMU-15-462-662-Fall2015--Computer-Graphics-/Assignment_1_DrawSVG/build/CMakeFiles/list_install_components.dir
