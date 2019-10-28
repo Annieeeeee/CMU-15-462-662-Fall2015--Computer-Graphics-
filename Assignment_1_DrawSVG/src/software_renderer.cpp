@@ -244,6 +244,61 @@ void SoftwareRendererImp::rasterize_line( float x0, float y0,
 
   // Task 1: 
   // Implement line rasterization
+  /*
+  **目前不太懂这个sample_rate是干啥的
+  */
+  x0=x0*sample_rate;
+  x1=x1*sample_rate;
+  y0=y0*sample_rate;
+  y1=y1*sample_rate;
+  if(x0>x1){//把所有向量都转为1、4象限向量
+    std::swap(x0,x1);
+    std::swap(y0,y1);
+  }
+  bool neg=(y1<y0);
+  if(neg){//把第四象限向量转为第一象限
+  /*
+  **是否可用，存疑
+  */
+    y1=2*y0-y1;
+  }
+  float x=x0,y=y0;
+  float k=(y0-y1)/(x0-x1);
+  bool large_slope=(k>1);
+  float e=-0.5;
+  if(!large_slope){//小斜率
+    {
+      //draw pixel
+      if(!neg){
+        rasterize_point(x,y,color);
+      }else{
+        float ytemp=2*y0-y;
+        rasterize_point(x,ytemp,color);
+      }
+      //compute next pixel
+      x++;e=e+k;
+      if(e>=0){
+        y++;e=e-1;
+      }
+    }while(x<x1);
+  }else{//大斜率
+    k=1/k;
+    {
+      //draw pixel
+      if(!neg){
+        rasterize_point(x,y,color);
+      }else{
+        float ytemp=2*y0-y;
+        rasterize_point(x,ytemp,color);
+      }
+      //compute next pixel
+      y++;e=e+k;
+      if(e>=0){
+        x++;e=e-1;
+      }
+    }while(y<y1);
+  }
+  
 }
 
 void SoftwareRendererImp::rasterize_triangle( float x0, float y0,
@@ -272,6 +327,5 @@ void SoftwareRendererImp::resolve( void ) {
   return;
 
 }
-
 
 } // namespace CMU462
